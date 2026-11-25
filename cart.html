@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Security & Privacy Policies -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://wa.me; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://wa.me;">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+
+  <!-- Favicon & Brand Icons -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="shortcut icon" href="assets/images/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+  <title>Your Cart & WhatsApp Checkout — SSR Guntur Mirchi Store</title>
+  <meta name="description" content="Review your items, enter your delivery address, and place your order directly via WhatsApp.">
+  <meta name="theme-color" content="#143522">
+
+  <!-- Stylesheets -->
+    <!-- Heritage & Clean Typography: Cormorant Garamond & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/premium.css">
+</head>
+<body>
+  <a href="#mainContent" class="skip-link">Skip to main content</a>
+  <div id="site-header-container"></div>
+
+  <main id="mainContent">
+    <section class="catalogue-header">
+      <div class="site-container">
+        <span class="section-eyebrow">Quick WhatsApp Ordering</span>
+        <h1 class="section-title">Your Cart & Delivery Details</h1>
+        <p class="section-desc">
+          Enter your delivery address below. We format your order into an instant WhatsApp message to our Guntur desk.
+        </p>
+      </div>
+    </section>
+
+    <div class="site-container">
+      <!-- Empty Cart State -->
+      <div class="empty-state-card" id="emptyCartState" style="display: none;">
+        <div class="empty-state-icon">
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+        </div>
+        <h2 class="empty-state-title">Your Cart is Empty</h2>
+        <p class="empty-state-text">
+          You haven't selected any karam yet. Choose from our freshly pounded Guddu Karam, Masala Karam, Nalla Karam, or Kobbari Karam.
+        </p>
+        <a href="products.html" class="btn btn-chilli btn-lg">Choose Your Karam &rarr;</a>
+      </div>
+
+      <!-- Main Cart Content Grid -->
+      <div class="checkout-layout" id="cartContentWrapper">
+        <!-- Left: Items & Address Form -->
+        <div class="checkout-main-col">
+          <!-- Items List Card -->
+          <div class="order-summary-box" style="margin-bottom: var(--space-6);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-4);">
+              <h2 class="summary-heading" style="margin: 0; padding: 0; border: none;">Order Items (<span id="cartItemCountLabel">0 packs</span>)</h2>
+              <button type="button" class="btn btn-sm btn-outline" id="clearCartBtn" style="color: var(--color-error); border-color: rgba(185, 28, 28, 0.4);">
+                Clear Cart
+              </button>
+            </div>
+
+            <div id="cartItemsContainer">
+              <!-- Injected by cart.js -->
+            </div>
+
+            <div style="margin-top: var(--space-4); text-align: right;">
+              <a href="products.html" style="font-size: var(--text-xs); color: var(--color-chilli-red); text-decoration: underline; font-weight: 700;">
+                + Add another karam pack from catalogue
+              </a>
+            </div>
+          </div>
+
+            <aside class="international-cart-note">
+              <div>
+                <h2>Ordering from outside India?</h2>
+                <p>This checkout accepts Indian addresses only. Message us on WhatsApp to arrange international delivery for the items in your cart.</p>
+              </div>
+              <a id="internationalCartLink" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Arrange international delivery <span aria-hidden="true">&rarr;</span></a>
+            </aside>
+
+            <!-- Address Form (State -> District -> Pincode -> Village -> H-No -> Landmark) -->
+          <div class="address-form-box">
+            <h2 class="summary-heading">Delivery Address</h2>
+            <p style="font-size: var(--text-xs); color: var(--color-charcoal-muted); margin-bottom: var(--space-6);">
+              Please provide your address so we can check delivery availability and compute exact parcel postal charges.
+            </p>
+
+            <form id="checkoutAddressForm" novalidate>
+              <!-- Contact Details -->
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label for="customerName" class="form-label">Your Full Name <span class="required-star">*</span></label>
+                  <input type="text" id="customerName" class="form-input" placeholder="e.g. Ramesh Varma" required autocomplete="name">
+                  <span class="form-error" id="nameError"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="customerPhone" class="form-label">WhatsApp Mobile Number <span class="required-star">*</span></label>
+                  <input type="tel" id="customerPhone" class="form-input" placeholder="10-digit number (e.g. 9876543210)" maxlength="10" required autocomplete="tel">
+                  <span class="form-help">SSR will reply to this number on WhatsApp</span>
+                  <span class="form-error" id="phoneError"></span>
+                </div>
+              </div>
+
+              <!-- State & District Dropdowns -->
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label for="addressState" class="form-label">1. State <span class="required-star">*</span></label>
+                  <select id="addressState" class="form-select" required>
+                    <!-- Populated dynamically from locations.js -->
+                  </select>
+                  <span class="form-error" id="stateError"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="addressDistrict" class="form-label">2. District <span class="required-star">*</span></label>
+                  <select id="addressDistrict" class="form-select" disabled required>
+                    <option value="">-- First Select State --</option>
+                  </select>
+                  <span class="form-error" id="districtError"></span>
+                </div>
+              </div>
+
+              <!-- Pincode with Suggestions -->
+              <div class="form-group">
+                <label for="addressPincode" class="form-label">3. Postal PIN Code <span class="required-star">*</span></label>
+                <input type="text" id="addressPincode" class="form-input" placeholder="6-digit PIN code (e.g. 522001)" maxlength="6" required pattern="[1-9][0-9]{5}">
+                <div class="pincode-helper-row" id="pincodeSuggestions"></div>
+                <span class="form-error" id="pincodeError"></span>
+              </div>
+
+              <!-- Village / Town / City -->
+              <div class="form-group">
+                <label for="addressVillage" class="form-label">4. Village / Town / City <span class="required-star">*</span></label>
+                <input type="text" id="addressVillage" class="form-input" placeholder="e.g. Chilakaluripet, Guntur, or Hyderabad" required>
+                <span class="form-error" id="villageError"></span>
+              </div>
+
+              <!-- House Number & Street (H-No) -->
+              <div class="form-group">
+                <label for="addressHouseNo" class="form-label">5. House No. & Street / Door No. <span class="required-star">*</span></label>
+                <input type="text" id="addressHouseNo" class="form-input" placeholder="e.g. D.No 12-4/A, Gandhi Road" required>
+                <span class="form-error" id="houseNoError"></span>
+              </div>
+
+              <!-- Landmark -->
+              <div class="form-group">
+                <label for="addressLandmark" class="form-label">6. Landmark (Optional)</label>
+                <input type="text" id="addressLandmark" class="form-input" placeholder="e.g. Near SBI Bank, Beside Shiva Temple">
+              </div>
+
+              <!-- Special Instructions -->
+              <div class="form-group">
+                <label for="deliveryNotes" class="form-label">Delivery Notes (Optional)</label>
+                <textarea id="deliveryNotes" class="form-textarea" rows="2" placeholder="e.g. Call before arrival, deliver in afternoon"></textarea>
+              </div>
+
+              <!-- Consent Notice -->
+              <div style="background: var(--color-cream); padding: var(--space-3); border-radius: var(--radius-sm); font-size: var(--text-xs); color: var(--color-charcoal-muted); margin-bottom: var(--space-6);">
+                <p style="margin: 0;">
+                  <strong>WhatsApp Order Notice:</strong> Clicking below prepares your complete order details into WhatsApp. You can review and confirm before sending.
+                </p>
+              </div>
+
+              <button type="submit" class="btn btn-chilli btn-block btn-lg" id="proceedToReviewBtn">
+                Review Order Details &rarr;
+              </button>
+            </form>
+          </div>
+
+          <!-- Order Review Section -->
+          <div id="orderReviewSection" hidden>
+            <div class="order-review-card">
+              <div class="review-section-header">
+                <h3>Order Review Summary</h3>
+                <button type="button" class="btn btn-sm btn-secondary" id="editAddressBtn">Edit Address</button>
+              </div>
+
+              <div style="margin-bottom: var(--space-4);">
+                <span style="font-size: 11px; text-transform: uppercase; font-weight: 800; color: var(--color-earth);">Customer:</span>
+                <div style="font-size: 15px; font-weight: 700; color: var(--color-charcoal);">
+                  <span id="reviewCustomerName"></span> (<span id="reviewCustomerPhone"></span>)
+                </div>
+              </div>
+
+              <div style="margin-bottom: var(--space-4);">
+                <span style="font-size: 11px; text-transform: uppercase; font-weight: 800; color: var(--color-earth);">Delivery Address:</span>
+                <div class="review-address-display" id="reviewAddressDisplay"></div>
+              </div>
+
+              <div style="margin-bottom: var(--space-4);">
+                <span style="font-size: 11px; text-transform: uppercase; font-weight: 800; color: var(--color-earth);">Packs Selected:</span>
+                <div id="reviewItemsList" style="margin-top: 6px;"></div>
+              </div>
+
+              <div style="border-top: 1px solid var(--color-border); padding-top: var(--space-3); margin-top: var(--space-3);">
+                <div class="summary-line">
+                  <span>Product Subtotal:</span>
+                  <strong id="reviewSubtotal">₹0</strong>
+                </div>
+                <div class="summary-line total-line">
+                  <span>Estimated Total:</span>
+                  <span id="reviewTotal">₹0</span>
+                </div>
+              </div>
+
+              <div style="margin-top: var(--space-6);">
+                <button type="button" class="btn btn-whatsapp btn-block btn-lg" id="placeWhatsAppOrderBtn">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662a11.838 11.838 0 005.71 1.455h.005c6.554 0 11.89-5.335 11.893-11.893 0-3.18-1.238-6.168-3.486-8.414z"/>
+                  </svg>
+                  <span>Place Order via WhatsApp</span>
+                </button>
+                <p style="font-size: 11px; color: var(--color-charcoal-muted); text-align: center; margin-top: 8px;">
+                  WhatsApp will open with your order pre-filled. Simply press Send.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Summary Box -->
+        <div class="checkout-sidebar-col">
+          <div class="order-summary-box" style="position: sticky; top: 90px;">
+            <h2 class="summary-heading">Order Total</h2>
+
+            <div class="summary-line">
+              <span>Items Subtotal:</span>
+              <strong id="cartSubtotalLabel">₹0</strong>
+            </div>
+
+            <div class="summary-line">
+              <span>Delivery Fee:</span>
+              <span style="font-style: italic; color: var(--color-earth);">Confirmed on WhatsApp</span>
+            </div>
+
+            <div class="delivery-notice-box" id="deliveryPolicyNotice">
+              Postal delivery rates are calculated by weight (1Kg / 2Kg) and destination PIN code, confirmed via WhatsApp before payment.
+            </div>
+
+            <div class="summary-line total-line">
+              <span>Estimated Amount:</span>
+              <span id="cartTotalLabel">₹0</span>
+            </div>
+
+            <div style="margin-top: var(--space-6); font-size: var(--text-xs); color: var(--color-charcoal-muted); line-height: 1.5;">
+              <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: var(--color-success); flex-shrink: 0;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span><strong>100% De-Stemmed:</strong> Guaranteed pure chilli pod flesh</span>
+              </div>
+              <div style="display: flex; gap: 8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: var(--color-success); flex-shrink: 0;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Pay securely via UPI after stock confirmation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer-container"></div>
+  <script type="module" src="js/pages/cart.js"></script>
+</body>
+</html>

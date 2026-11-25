@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Security & Privacy Policies -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://wa.me; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://wa.me;">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+
+  <!-- Favicon & Brand Icons -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="shortcut icon" href="assets/images/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+  <title>Products — Pure Guntur Karam in 1Kg & 2Kg Packs | SSR Foods</title>
+  <meta name="description" content="Order authentic Andhra karam direct from Guntur. 100% hand de-stemmed, sun-dried, stone-pounded Goddu Karam, Masala Karam, Nalla Karam & Kobbari Karam in 1Kg & 2Kg packs.">
+  <meta name="theme-color" content="#143522">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Products — Pure Guntur Karam | SSR Foods">
+  <meta property="og:description" content="Shop our 4 authentic Guntur home karam recipes in generous 1Kg & 2Kg family packs. Direct dispatch via WhatsApp.">
+  <meta property="og:type" content="website">
+
+    <!-- Heritage & Clean Typography: Cormorant Garamond & Outfit -->
+    <!-- Heritage & Clean Typography: Cormorant Garamond & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    /* Formal Executive Hero for Products Catalogue */
+    .catalogue-formal-hero {
+      background: linear-gradient(135deg, #0B2014 0%, #143522 100%);
+      color: #FFFFFF;
+      padding: var(--space-12) 0 var(--space-10);
+      position: relative;
+      border-bottom: 2px solid var(--color-chilli-red);
+    }
+
+    .catalogue-hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+      align-items: center;
+    }
+
+    @media (min-width: 992px) {
+      .catalogue-hero-grid {
+        grid-template-columns: 1.25fr 0.75fr;
+      }
+    }
+
+    .catalogue-hero-text .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #FBBF24;
+      margin-bottom: var(--space-3);
+    }
+
+    .catalogue-hero-text .hero-title {
+      color: #FFFFFF;
+      font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+      line-height: 1.18;
+      margin-bottom: var(--space-4);
+      font-weight: 700;
+    }
+
+    .catalogue-hero-text .hero-desc {
+      color: #FDFBF7;
+      font-size: clamp(1rem, 1.4vw, 1.15rem);
+      line-height: 1.7;
+      margin-bottom: 0;
+      max-width: 620px;
+    }
+
+    /* Formal International & Domestic Delivery Badge Card */
+    .delivery-service-panel {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: var(--radius-md);
+      padding: var(--space-5) var(--space-6);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+
+    .delivery-service-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .delivery-service-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(251, 191, 36, 0.15);
+      border: 1px solid rgba(251, 191, 36, 0.35);
+      color: #FBBF24;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .delivery-service-meta strong {
+      display: block;
+      color: #FFFFFF;
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    .delivery-service-meta span {
+      display: block;
+      color: #D1D5DB;
+      font-size: 0.78rem;
+      margin-top: 2px;
+    }
+
+    .delivery-service-body {
+      font-size: 0.82rem;
+      color: #E5E7EB;
+      line-height: 1.55;
+      padding-top: var(--space-3);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .delivery-service-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 0.75rem 1.1rem;
+      background: #FFFFFF;
+      color: var(--color-primary-dark);
+      font-size: 0.84rem;
+      font-weight: 800;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: all var(--transition-fast);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .delivery-service-btn:hover {
+      background: #FDFBF7;
+      color: var(--color-chilli-red);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    }
+  </style>
+  <link rel="stylesheet" href="css/premium.css">
+</head>
+<body>
+  <a href="#mainContent" class="skip-link">Skip to main content</a>
+  <div id="site-header-container"></div>
+
+  <main id="mainContent">
+    <!-- Formal Executive Catalogue Header -->
+    <section class="catalogue-formal-hero">
+      <div class="site-container">
+        <div class="catalogue-hero-grid">
+          <div class="catalogue-hero-text">
+            <span class="hero-kicker">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              Guntur Mirchi Cluster &bull; Direct Farm Dispatch
+            </span>
+            <h1 class="hero-title">Authentic Andhra Karams</h1>
+            <p class="hero-desc">
+              100% hand de-stemmed Guntur Teja chillies, solar-cured for 7 days under open Andhra sunshine, and cool stone-pounded with country garlic and roasted spices. Available in generous <strong>1 Kg and 2 Kg family saver packs</strong>.
+            </p>
+          </div>
+
+          <!-- Formal Worldwide & Domestic Delivery Card -->
+          <div class="delivery-service-panel">
+            <div class="delivery-service-header">
+              <div class="delivery-service-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+              </div>
+              <div class="delivery-service-meta">
+                <strong>Domestic &amp; International Delivery</strong>
+                <span>Air Dispatch from Guntur, India</span>
+              </div>
+            </div>
+
+            <div class="delivery-service-body">
+              We ship fresh seasonal batches across all Indian States and fulfill international parcel inquiries with customs-compliant airtight packaging.
+            </div>
+
+            <a href="#" class="delivery-service-btn" id="internationalDeliveryLink" target="_blank" rel="noopener noreferrer">
+              <span>Inquire Worldwide Delivery</span>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+
+            <!-- Formal Bulk & Catering Order Channel -->
+            <a href="#" class="delivery-service-btn" id="bulkOrderLink" target="_blank" rel="noopener noreferrer" style="background: rgba(251, 191, 36, 0.15); color: #FBBF24; border: 1px solid rgba(251, 191, 36, 0.4); box-shadow: none;">
+              <span style="display: flex; align-items: center; gap: 6px;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                Bulk &amp; Catering Orders Accepted
+              </span>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Catalogue Search & Sorting Toolbar -->
+    <div class="catalogue-toolbar" role="region" aria-label="Catalogue search and sorting">
+      <div class="site-container">
+        <div class="toolbar-inner">
+          <div style="display: flex; align-items: center; gap: var(--space-4); flex-wrap: wrap;">
+            <span style="font-size: 0.82rem; font-weight: 700; color: var(--color-primary-dark); display: inline-flex; align-items: center; gap: 6px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: var(--color-success);"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Fresh Seasonal Milling
+            </span>
+            <span style="font-size: 0.82rem; font-weight: 700; color: #92400E; background: #FEF3C7; padding: 3px 9px; border-radius: var(--radius-pill); border: 1px solid #FDE68A;">
+              Bulk &amp; Institutional Orders Accepted
+            </span>
+            <span style="font-size: 0.82rem; color: var(--color-charcoal-muted);">
+              Standard 1 Kg &bull; Pantry 2 Kg &bull; Trial 500g
+            </span>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: var(--space-3); flex: 1; max-width: 480px; justify-content: flex-end;">
+            <div style="position: relative; flex: 1; min-width: 180px;">
+              <input 
+                type="search" 
+                id="catalogueSearchInput" 
+                class="form-input" 
+                placeholder="Search karam, e.g. Goddu, Masala, Nalla..." 
+                aria-label="Filter products by keyword"
+                style="padding: 0.55rem 0.9rem; font-size: var(--text-xs); border-radius: var(--radius-sm);"
+              />
+            </div>
+
+            <div class="sort-select-wrap">
+              <label for="catalogueSortSelect" style="color: var(--color-charcoal-muted); font-size: 11px; font-weight: 700; text-transform: uppercase;">Sort:</label>
+              <select id="catalogueSortSelect" class="form-select" style="padding: 0.55rem 0.9rem; font-size: var(--text-xs); width: auto; border-radius: var(--radius-sm);">
+                <option value="default">Featured</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="name-asc">Alphabetical</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Products Grid Section -->
+    <section class="section-padding" style="background-color: var(--color-cream); min-height: 520px;">
+      <div class="site-container">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-6);">
+          <span id="productCountLabel" style="font-size: var(--text-sm); font-weight: 800; color: var(--color-charcoal);">Showing 4 Guntur Karams</span>
+          <span style="font-size: var(--text-xs); color: var(--color-chilli-red); font-weight: 800;">
+            1 Kg &amp; 2 Kg Family Packs Ready for Dispatch
+          </span>
+        </div>
+
+        <div class="products-grid" id="catalogueProductsGrid">
+          <!-- Injected dynamically via products.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer-container"></div>
+  <script type="module" src="js/pages/products.js"></script>
+</body>
+</html>

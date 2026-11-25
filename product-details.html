@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Security & Privacy Policies -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://wa.me; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://wa.me;">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+
+  <!-- Favicon & Brand Icons -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="shortcut icon" href="assets/images/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+  <title>Product Details — SSR Foods</title>
+  <meta name="description" content="View authentic product specifications, pack sizes, ingredients, and storage guidance for SSR farm spices.">
+  <meta name="theme-color" content="#234B36">
+
+    <!-- Heritage & Clean Typography: Cormorant Garamond & Outfit -->
+    <!-- Heritage & Clean Typography: Cormorant Garamond & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/premium.css">
+</head>
+<body>
+  <a href="#mainContent" class="skip-link">Skip to main content</a>
+  <div id="site-header-container"></div>
+
+  <main id="mainContent">
+    <div class="site-container" style="padding-top: var(--space-6);">
+      <!-- Breadcrumb navigation -->
+      <nav aria-label="Breadcrumb" class="product-breadcrumbs">
+        <a href="index.html" style="text-decoration: underline;">Home</a> &rarr; 
+        <a href="products.html" style="text-decoration: underline;">Products</a> &rarr; 
+        <span id="breadcrumbCurrent">Product Details</span>
+      </nav>
+
+      <!-- Dynamic Product Detail Mount Point -->
+      <div id="productDetailContainer">
+        <!-- Rendered by js/pages/product-details.js -->
+        <div style="text-align: center; padding: var(--space-16) 0;">
+          <p>Loading spice details...</p>
+        </div>
+      </div>
+
+      <!-- Related Products Section -->
+      <section class="related-products-section">
+        <h2>You may also enjoy</h2>
+        <div class="products-grid" id="relatedProductsGrid">
+          <!-- Injected via product-details.js -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer-container"></div>
+  <script type="module" src="js/pages/product-details.js"></script>
+</body>
+</html>

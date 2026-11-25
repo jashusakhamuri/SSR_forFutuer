@@ -1,0 +1,466 @@
+/**
+ * SSR — Responsive Layout CSS
+ * Comprehensive mobile-first media queries for a perfect experience on every screen.
+ */
+
+/* ===== Base Mobile (< 640px) — Default styles ===== */
+
+/* Tighten mobile hero */
+.hero-section {
+  padding: var(--space-10) 0 var(--space-12);
+}
+
+.hero-title {
+  font-size: clamp(2rem, 8vw, 2.8rem);
+}
+
+.hero-subtitle {
+  font-size: var(--text-base);
+}
+
+.hero-ctas {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.hero-ctas .btn {
+  text-align: center;
+}
+
+.hero-producer-note {
+  font-size: var(--text-xs);
+}
+
+/* Mobile section spacing */
+.section-padding {
+  padding: var(--space-10) 0;
+}
+
+.section-header {
+  margin-bottom: var(--space-8);
+}
+
+.section-title {
+  font-size: clamp(1.6rem, 6vw, 2.2rem);
+}
+
+/* Mobile products grid */
+.products-grid {
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+/* Mobile process cards */
+.process-grid {
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+.process-card-img {
+  height: 180px;
+}
+
+/* Mobile story section */
+.story-visual-grid {
+  grid-template-columns: 1fr;
+}
+
+/* Mobile comparison table scroll hint */
+.diff-table-card {
+  position: relative;
+}
+
+.diff-table-card::after {
+  content: "← Scroll to compare →";
+  display: block;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-charcoal-muted);
+  padding: 8px;
+  background: var(--color-cream-surface);
+  border-top: 1px solid var(--color-border);
+}
+
+/* Mobile footer */
+.footer-grid {
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+/* Mobile editorial article */
+.editorial-article {
+  padding: var(--space-6) var(--space-4);
+}
+
+@media (max-width: 639px) {
+  .announcement-content {
+    gap: 0.25rem 0.6rem;
+  }
+
+  .brand-link,
+  .brand-mark,
+  .brand-text {
+    min-width: 0;
+  }
+
+  .brand-text {
+    max-width: 20ch;
+  }
+
+  .brand-sub {
+    line-height: 1.3;
+  }
+
+  .header-actions {
+    gap: 0.35rem;
+  }
+
+  .action-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .home-page .hero-tag {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+  }
+
+  .home-page .hero-subtitle {
+    margin-bottom: 1.5rem;
+    line-height: 1.65;
+  }
+
+  .home-page .hero-visual .hero-image-frame {
+    aspect-ratio: 1.1;
+  }
+
+  .home-page .hero-producer-note {
+    line-height: 1.5;
+  }
+
+  .catalogue-header {
+    padding-block: var(--space-8);
+  }
+
+  .catalogue-toolbar {
+    position: static;
+    top: auto;
+    padding-block: var(--space-3);
+  }
+
+  .toolbar-inner {
+    gap: var(--space-2);
+  }
+
+  .catalogue-search-sort {
+    gap: var(--space-2);
+  }
+
+  .worldwide-delivery-pill {
+    min-height: 64px;
+    gap: var(--space-2);
+    margin-top: var(--space-5);
+    padding: 0.55rem 0.65rem 0.55rem 0.85rem;
+  }
+
+  .delivery-pill-kicker {
+    font-size: 0.55rem;
+  }
+
+  .delivery-pill-title {
+    font-size: var(--text-sm);
+  }
+
+  .delivery-pill-globe {
+    width: 88px;
+    height: 40px;
+  }
+
+  .delivery-pill-arrow {
+    width: 30px;
+    height: 30px;
+  }
+
+  .international-cart-note {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* Mobile card body padding */
+.card-body {
+  padding: var(--space-4);
+}
+
+/* Tighten mobile card pricing */
+.card-current-price {
+  font-size: 1.4rem;
+}
+
+/* Mobile drawer improvements */
+.mobile-drawer {
+  width: min(90vw, 380px);
+}
+
+.mobile-nav-link {
+  font-size: var(--text-base);
+  padding: var(--space-3) 0;
+}
+
+/* Touch-friendly buttons on mobile */
+.btn {
+  min-height: 48px;
+}
+
+.btn-sm {
+  min-height: 40px;
+}
+
+/* ===== Small phones (< 375px) ===== */
+@media (max-width: 374px) {
+  :root {
+    --container-padding: 1rem;
+  }
+
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .card-pairing-box {
+    font-size: 11px;
+  }
+
+  .card-current-price {
+    font-size: 1.25rem;
+  }
+
+}
+
+/* ===== Medium Devices (Tablets: 640px and up) ===== */
+@media (min-width: 640px) {
+  .ribbon-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-ctas {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .process-card-img {
+    height: 200px;
+  }
+
+  /* Hide scroll hint on tablet+ */
+  .diff-table-card::after {
+    display: none;
+  }
+
+  /* Story visual grid */
+  .story-visual-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ===== Large Devices (Desktops: 992px and up) ===== */
+@media (min-width: 992px) {
+  .desktop-nav {
+    display: block;
+  }
+
+  .mobile-menu-toggle {
+    display: none;
+  }
+
+  .hide-mobile {
+    display: inline-flex;
+  }
+
+  .hero-section {
+    padding: var(--space-24) 0 var(--space-24);
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .toolbar-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .product-detail-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .checkout-layout {
+    grid-template-columns: 1.5fr 1fr;
+  }
+
+  .section-padding {
+    padding: var(--space-16) 0;
+  }
+
+  .process-card-img {
+    height: 220px;
+  }
+}
+
+/* ===== Extra-wide screens (1200px and up) ===== */
+@media (min-width: 1200px) {
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+
+/* ==========================================================================
+   Mobile Product Cards & Interactive Elements Polish (Production Quality)
+   ========================================================================== */
+@media (max-width: 639px) {
+  /* Product Cards on Mobile */
+  .products-grid {
+    gap: var(--space-4);
+  }
+
+  .product-card {
+    border-radius: var(--radius-md);
+  }
+
+  .card-media-wrapper {
+    aspect-ratio: 16 / 11;
+  }
+
+  .card-info-trigger-btn {
+    bottom: 8px;
+    right: 8px;
+    padding: 5px 10px;
+    font-size: 10px;
+    gap: 4px;
+  }
+
+  .card-body {
+    padding: 0.95rem;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .card-desc {
+    font-size: 0.78rem;
+    line-height: 1.5;
+    margin-bottom: 0.65rem;
+  }
+
+  .card-pairing-box {
+    padding: 0.5rem 0.65rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.72rem;
+  }
+
+  .card-variant-options {
+    gap: 0.3rem;
+  }
+
+  .variant-option {
+    min-height: 36px;
+    font-size: 0.7rem;
+    padding: 0.35rem 0.2rem;
+  }
+
+  .card-purchase {
+    padding-top: 0.65rem;
+  }
+
+  .card-pricing-row {
+    margin-bottom: 0.6rem;
+  }
+
+  .card-current-price {
+    font-size: 1.35rem;
+  }
+
+  .card-actions .add-to-cart-btn {
+    min-height: 42px;
+    font-size: 0.78rem;
+  }
+
+  /* Info Modal on Mobile (Full-width clean bottom sheet) */
+  .info-modal {
+    width: 100vw;
+    max-height: 85vh;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .info-modal-header {
+    padding: 0.85rem 1rem;
+  }
+
+  .info-modal-thumb {
+    width: 44px;
+    height: 44px;
+  }
+
+  .info-modal-title {
+    font-size: 1.1rem;
+  }
+
+  .info-modal-body {
+    padding: 1rem;
+    gap: 0.85rem;
+  }
+
+  .info-section {
+    padding: 0.85rem;
+  }
+
+  .info-ingredient-table th,
+  .info-ingredient-table td {
+    padding: 6px 8px;
+    font-size: 0.76rem;
+  }
+
+  .info-modal-footer {
+    padding: 0.75rem 1rem;
+    flex-direction: column-reverse;
+    gap: 0.5rem;
+  }
+
+  .info-modal-footer .btn {
+    width: 100%;
+  }
+}

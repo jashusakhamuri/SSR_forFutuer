@@ -1,0 +1,712 @@
+/**
+ * SSR FARMS — Global Styles & Animations
+ * Premium Heritage Agricultural Brand
+ */
+
+/* ============================================================
+   Base
+   ============================================================ */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cream);
+  color: var(--color-charcoal);
+  font-size: var(--text-base);
+  overflow-x: hidden;
+  letter-spacing: 0.005em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Skip Link */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: var(--space-4);
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--space-2) var(--space-4);
+  z-index: 9999;
+  border-radius: var(--radius-sm);
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: var(--space-4);
+}
+
+/* ============================================================
+   Headings
+   ============================================================ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--color-charcoal);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+h1 { font-size: clamp(2.4rem, 5.5vw, 4.2rem); }
+h2 { font-size: clamp(1.9rem, 4vw, 3rem); }
+h3 { font-size: clamp(1.35rem, 2.5vw, 2rem); }
+
+p {
+  color: var(--color-charcoal-light);
+  margin-bottom: var(--space-4);
+  line-height: 1.7;
+  max-width: 72ch;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+strong, b {
+  font-weight: 700;
+  color: var(--color-charcoal);
+}
+
+/* ============================================================
+   Focus
+   ============================================================ */
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+/* Selection */
+::selection {
+  background: rgba(194, 142, 52, 0.18);
+  color: var(--color-charcoal);
+}
+
+/* ============================================================
+   Containers
+   ============================================================ */
+.site-container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.site-container-narrow {
+  width: 100%;
+  max-width: var(--container-narrow-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* ============================================================
+   Buttons — Base
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 0.85rem 1.75rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  white-space: nowrap;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+  min-height: 46px;
+  border-radius: 9px;
+  letter-spacing: 0;
+  box-shadow: 0 3px 8px rgba(28, 25, 23, 0.1);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Primary — deep green gradient with gold hover glow */
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 14px rgba(20, 53, 34, 0.25);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(20, 53, 34, 0.35), 0 0 0 2px rgba(194, 142, 52, 0.25);
+  border-color: var(--color-gold);
+}
+
+/* Gold — luxury CTA button */
+.btn-gold {
+  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 50%, var(--color-gold-dark) 100%);
+  color: var(--color-primary-dark);
+  border-color: var(--color-gold);
+  font-weight: 800;
+  box-shadow: 0 4px 16px rgba(194, 142, 52, 0.30);
+  letter-spacing: 0.03em;
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, var(--color-gold-light) 0%, #E8C060 50%, var(--color-gold) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(194, 142, 52, 0.50);
+  color: var(--color-primary-dark);
+}
+
+/* Chilli — kept for spice/whatsapp use only */
+.btn-chilli {
+  background: linear-gradient(135deg, var(--color-chilli-red) 0%, var(--color-chilli-bright) 100%);
+  color: var(--color-white);
+  border-color: var(--color-chilli-red);
+  box-shadow: 0 4px 16px rgba(185, 28, 28, 0.3);
+}
+
+.btn-chilli:hover {
+  background: linear-gradient(135deg, var(--color-chilli-dark) 0%, var(--color-chilli-red) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(225, 29, 72, 0.45);
+}
+
+/* Secondary */
+.btn-secondary {
+  background-color: var(--color-cream-surface);
+  color: var(--color-charcoal);
+  border-color: var(--color-border);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-white);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+/* Outline — green by default */
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+/* WhatsApp */
+.btn-whatsapp {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: var(--color-white);
+  border-color: #25D366;
+  font-weight: 700;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+}
+
+.btn-whatsapp:hover {
+  background: linear-gradient(135deg, #1EBE5D 0%, #075E54 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+}
+
+/* Success */
+.btn-success {
+  background: var(--color-success) !important;
+  color: var(--color-white) !important;
+}
+
+/* Sizes */
+.btn-sm    { padding: 0.5rem 1rem; font-size: var(--text-xs); }
+.btn-lg    { padding: 1.05rem 2.2rem; font-size: var(--text-base); }
+.btn-block { width: 100%; }
+
+/* Shared hover elevation */
+.btn-primary:hover,
+.btn-gold:hover,
+.btn-chilli:hover,
+.btn-secondary:hover,
+.btn-outline:hover,
+.btn-whatsapp:hover {
+  box-shadow: 0 7px 16px rgba(28, 25, 23, 0.16);
+}
+
+/* ============================================================
+   Badges
+   ============================================================ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 0.3rem 0.65rem;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.03em;
+}
+
+/* Heat / spice — retains chilli red */
+.badge-heat {
+  background-color: rgba(185, 28, 28, 0.12);
+  color: var(--color-chilli-red);
+  border: 1px solid rgba(185, 28, 28, 0.25);
+  font-weight: 700;
+}
+
+.badge-discount {
+  background-color: rgba(194, 142, 52, 0.15);
+  color: var(--color-gold-dark);
+  border: 1px solid rgba(194, 142, 52, 0.30);
+}
+
+/* ============================================================
+   Form Controls
+   ============================================================ */
+.form-group {
+  margin-bottom: var(--space-4);
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-charcoal);
+  margin-bottom: var(--space-1);
+}
+
+.form-label .required-star {
+  color: var(--color-error);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--radius-sm);
+  color: var(--color-charcoal);
+  font-size: var(--text-sm);
+  transition: all var(--transition-fast);
+  min-height: 46px;
+  border-radius: 8px;
+  border-color: rgba(28, 25, 23, 0.18);
+}
+
+.form-textarea {
+  min-height: 120px;
+}
+
+/* Gold focus ring */
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(194, 142, 52, 0.18);
+  outline: none;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #8A817A;
+}
+
+.form-input.is-invalid,
+.form-select.is-invalid {
+  border-color: var(--color-error);
+  background-color: #FEF2F2;
+}
+
+.form-error {
+  font-size: var(--text-xs);
+  color: var(--color-error);
+  margin-top: var(--space-1);
+  display: block;
+  font-weight: 600;
+}
+
+.form-help {
+  font-size: var(--text-xs);
+  color: var(--color-charcoal-muted);
+  margin-top: var(--space-1);
+}
+
+/* ============================================================
+   Section Eyebrow — gold
+   ============================================================ */
+.section-eyebrow {
+  color: var(--color-gold);
+  letter-spacing: 0.16em;
+}
+
+.section-header .section-title {
+  letter-spacing: -0.03em;
+}
+
+/* ============================================================
+   Product Cards
+   ============================================================ */
+.site-container .product-card {
+  border-color: rgba(28, 25, 23, 0.1);
+  border-radius: 14px;
+  box-shadow: 0 5px 18px rgba(28, 25, 23, 0.07);
+}
+
+.site-container .product-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(194, 142, 52, 0.30);
+  box-shadow: 0 14px 30px rgba(28, 25, 23, 0.12);
+}
+
+.site-container .product-card .card-media-wrapper {
+  background-color: #F1E8DD;
+}
+
+.site-container .product-card .card-image {
+  transition: transform 450ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.site-container .product-card:hover .card-image {
+  transform: scale(1.045);
+}
+
+.site-container .product-card .card-body {
+  padding: clamp(1rem, 2vw, 1.4rem);
+}
+
+.site-container .product-card .card-title {
+  letter-spacing: -0.02em;
+}
+
+.site-container .product-card .card-pairing-box {
+  border-radius: 0 8px 8px 0;
+}
+
+/* ============================================================
+   Hero Section
+   ============================================================ */
+.hero-section .hero-tag {
+  background: rgba(194, 142, 52, 0.12);
+  border-color: rgba(194, 142, 52, 0.35);
+  color: var(--color-gold-light);
+  box-shadow: none;
+}
+
+.hero-section .hero-title {
+  max-width: 13ch;
+  letter-spacing: -0.035em;
+  line-height: 1.04;
+}
+
+.hero-section .hero-title .highlight-red {
+  color: var(--color-gold-light);
+  text-shadow: none;
+}
+
+.hero-section .hero-subtitle {
+  max-width: 58ch;
+}
+
+/* ============================================================
+   Animation Keyframes
+   ============================================================ */
+@keyframes toastSlideIn {
+  0%   { opacity: 0; transform: translateY(24px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes toastSlideOut {
+  0%   { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(16px) scale(0.92); }
+}
+
+@keyframes toastProgress {
+  from { width: 100%; }
+  to   { width: 0%; }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(194, 142, 52, 0.5); }
+  50%       { box-shadow: 0 0 0 10px rgba(194, 142, 52, 0); }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+@keyframes cardBounce {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeInUp {
+  0%   { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  0%   { opacity: 0; transform: translateX(-40px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  0%   { opacity: 0; transform: translateX(40px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  0%   { opacity: 0; transform: scale(0.85); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Gold shimmer sweep */
+@keyframes goldShimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes countUp {
+  0%   { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroTextReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes slideDown {
+  0%   { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseScale {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.05); }
+}
+
+/* Fade rise up — entry animation */
+@keyframes fadeRiseUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   Animation Utility Classes
+   ============================================================ */
+.animate-float   { animation: floatSlow 4s ease-in-out infinite; }
+.card-pop-bounce { animation: cardBounce 0.4s var(--transition-bounce); }
+
+/* Scroll-triggered reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.88);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-scale.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Staggered children animation delays */
+.stagger-children > *:nth-child(1) { transition-delay: 0ms; }
+.stagger-children > *:nth-child(2) { transition-delay: 100ms; }
+.stagger-children > *:nth-child(3) { transition-delay: 200ms; }
+.stagger-children > *:nth-child(4) { transition-delay: 300ms; }
+.stagger-children > *:nth-child(5) { transition-delay: 400ms; }
+
+/* Hero animation delays */
+.hero-animate-1 { animation: heroTextReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both; }
+.hero-animate-2 { animation: heroTextReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both; }
+.hero-animate-3 { animation: heroTextReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both; }
+.hero-animate-4 { animation: heroTextReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.7s both; }
+.hero-animate-5 { animation: heroTextReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.9s both; }
+
+/* ============================================================
+   Toast Notifications
+   ============================================================ */
+.toast-container {
+  position: fixed;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  z-index: var(--z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  pointer-events: none;
+  max-width: 400px;
+  width: calc(100vw - 32px);
+}
+
+.toast-item {
+  pointer-events: auto;
+  position: relative;
+  background-color: #18181B;
+  color: #FAFAFA;
+  border-radius: 12px;
+  padding: var(--space-4) var(--space-4) var(--space-5);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  overflow: hidden;
+  animation: toastSlideIn 0.35s var(--transition-bounce) forwards;
+}
+
+.toast-item.toast-leaving {
+  animation: toastSlideOut 0.25s ease forwards;
+}
+
+.toast-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(34, 197, 94, 0.18);
+  color: #4ADE80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.toast-item.toast-cart .toast-icon-wrap {
+  background: rgba(194, 142, 52, 0.20);
+  color: var(--color-gold-light);
+}
+
+.toast-content { flex: 1; }
+
+.toast-title {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 2px;
+}
+
+.toast-desc {
+  font-size: var(--text-xs);
+  color: #A1A1AA;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.toast-action {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--color-gold-light);
+  text-decoration: underline;
+}
+
+.toast-close {
+  color: #71717A;
+  font-size: 1.4rem;
+  line-height: 1;
+  padding: 0 4px;
+  cursor: pointer;
+}
+
+.toast-close:hover { color: #FFFFFF; }
+
+.toast-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--color-gold), var(--color-gold-light));
+  animation: toastProgress linear forwards;
+}
+
+/* ============================================================
+   Reduced Motion
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================
+   Mobile tweaks
+   ============================================================ */
+@media (max-width: 639px) {
+  .btn {
+    white-space: normal;
+  }
+
+  .hero-section .hero-title {
+    max-width: 11ch;
+  }
+}
